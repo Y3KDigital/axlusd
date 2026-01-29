@@ -1,42 +1,51 @@
-# ALEXANDRITE RWA EXECUTION PACKAGE
+﻿# ALEXANDRITE RWA EXECUTION PACKAGE (AXLUSD)
 
-Start here (institutional navigation + color-coded flowcharts): [00-EXECUTIVE-PORTAL.md](00-EXECUTIVE-PORTAL.md)
+Classification: Confidential - Institutional Use Only
+Last updated: 2026-01-28
 
-Executive diagrams:
-- [diagrams/00-Color-Coded-Overview.md](diagrams/00-Color-Coded-Overview.md)
-- [diagrams/04-Flow-Trees.md](diagrams/04-Flow-Trees.md)
+## Start Here (Navigation Spine)
 
-**Asset:** 2kg Rough Chrysoberyl (Alexandrite) – Bahia, Brazil  
-**Appraised Value:** USD $42,000,000  
-**Seal ID:** 00289944  
-**Owner:** Investments Danath Inc.  
-**Report Date:** August 18, 2025  
+- Executive portal (single spine): [00-EXECUTIVE-PORTAL.md](00-EXECUTIVE-PORTAL.md)
+- Executive diagram pack (end-to-end + ceremony + governance trees): [diagrams/00-Color-Coded-Overview.md](diagrams/00-Color-Coded-Overview.md)
+- Flow trees (artifact tree + WBS tree): [diagrams/04-Flow-Trees.md](diagrams/04-Flow-Trees.md)
+- Diligence packet index (lender send pack): [ops/04-Diligence-Packet-Index.md](ops/04-Diligence-Packet-Index.md)
+- XRPL attestation ceremony page (operator-proof): [xrpl/07-Attestation-Transaction-Template.md](xrpl/07-Attestation-Transaction-Template.md)
+
+## Asset Summary (Facts)
+
+- Asset: 2kg rough chrysoberyl (alexandrite), Bahia, Brazil
+- Appraised value: USD 42,000,000
+- Seal ID: 00289944
+- Owner (declared): Investments Danath Inc.
+- Report date: 2025-08-18
+
+## 10-Minute IC Review Path (Recommended)
+
+1) Authority + enforceability: [legal/01-SPV-Formation-Guide.md](legal/01-SPV-Formation-Guide.md)
+2) Control of the collateral: [custody/01-Vault-Selection-Criteria.md](custody/01-Vault-Selection-Criteria.md)
+3) Evidence chain (hash + CID): [asset/03-Master-Asset-Record.md](asset/03-Master-Asset-Record.md)
+4) Canonical on-ledger anchor (XRPL): [xrpl/07-Attestation-Transaction-Template.md](xrpl/07-Attestation-Transaction-Template.md)
+5) Enforcement reality (diagram): [diagrams/00-Color-Coded-Overview.md](diagrams/00-Color-Coded-Overview.md)
 
 ---
 
-## PURPOSE
+## Purpose
 
-This repository contains the complete institutional execution framework for converting a gemstone appraisal into a **verified, custodied, tokenized Real-World Asset (RWA)**.
+This repository is an institutional execution framework for converting an appraisal into a verified, custodied, financeable Real-World Asset (RWA).
 
-This is not marketing material. This is an operational playbook for:
+It is not marketing material. It is designed for:
 - Legal counsel
 - Institutional custodians
 - Credit desks
-- RWA tokenization platforms
-- Compliance officers
-- Auditors
+- Compliance and audit
 
----
+## Architecture Decision (Locked)
 
-## ARCHITECTURE DECISION
+- Canonical registry and evidence: XRPL
+- Mirror rail (optional): Stellar (settlement/distribution only, parity constrained)
+- EVM: optional adapter only, never canonical
 
-**Primary Rails:** XRPL (canonical registry) + Stellar (settlement/distribution)  
-**Rationale:** Native asset semantics, deterministic settlement, institutional recognition  
-**EVM Status:** Optional adapter only, never canonical
-
----
-
-## REPOSITORY STRUCTURE
+## Repository Structure
 
 ```
 /legal/          SPV formation, resolutions, risk disclosures
@@ -48,51 +57,17 @@ This is not marketing material. This is an operational playbook for:
 /tokenization/   Positioning + rail parity rules (XRPL primary, Stellar mirror)
 /ops/            IOU operations runbooks + funding playbook
 /diagrams/       System architecture, trust boundaries, flows
-/reference/      Original appraisal, supporting documentation
 ```
 
-Lender-ready send artifacts:
-- `/ops/03-First-Lender-Outreach-Email.md`
-- `/ops/04-Diligence-Packet-Index.md`
-- `/xrpl/07-Attestation-Transaction-Template.md`
+## Status
 
----
+- Evidence: SHA-256 recorded; IPFS CID recorded
+- On-ledger anchor: XRPL attestation transaction pending (requires XRPL addresses + signing method)
+- Custody/insurance: operational dependency (vault receipt + binder)
 
-## EXECUTION SEQUENCE
+## Disclaimers (Non-Negotiable)
 
-1. **Legal Foundation** → SPV formation, asset contribution
-2. **Custody Layer** → Institutional vault, insurance, control
-3. **Digital Anchoring** → XRPL memo-based verification
-4. **Credit Facility** → $10-15M collateralized lending structure
-5. **Tokenization** → XRPL-native issued assets with Stellar distribution
-
----
-
-## STATUS
-
-**Current Phase:** Documentation largely complete; execution inputs pending (custodian, insurance, IPFS CID, issuer addresses)  
-**Appraisal SHA-256:** 59B634D41C1B0913D63457955688AD4063CA7DDC73F6E5B25E7F18B7F57628BE  
-**Next Step:** SPV formation + custody selection + IPFS upload + XRPL issuer account provisioning  
-**Target:** Q1 2026 deployment
-
----
-
-## CRITICAL DISCLAIMERS
-
-- This asset is illiquid; valuation reflects potential, not guaranteed liquidation
-- Export regulations from Brazil must be verified before custody transfer
-- All financial structures require independent legal review
-- Token offerings subject to securities compliance in applicable jurisdictions
-
----
-
-## DOCUMENT CONTROL
-
-**Version:** 1.0  
-**Date:** January 28, 2026  
-**Classification:** Confidential – Institutional Use Only  
-**Authorized Recipients:** Legal counsel, custodians, qualified investors
-
----
-
-**For questions or implementation support, refer to section-specific documentation in subdirectories.**
+- This asset is illiquid; valuation reflects appraisal methodology, not guaranteed liquidation.
+- Export and regulatory requirements must be verified prior to custody transfer.
+- All financing and token activity requires independent legal review.
+- Token offerings are subject to securities compliance in applicable jurisdictions.
