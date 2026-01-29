@@ -13,3 +13,66 @@ a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
 .ul{margin:8px 0 0 18px}
 .small{color:var(--muted);font-size:13px}
 hr{border:none;border-top:1px solid var(--line);margin:18px 0}
+
+/* --- Team-facing polish overrides (appended) --- */
+:root{
+	--accent:#a78bfa;
+	--good:#6ee7b7;
+	--warn:#fcd34d;
+}
+
+body{
+	background:
+		radial-gradient(1200px 600px at 20% -10%, rgba(167, 139, 250, 0.18), transparent 60%),
+		radial-gradient(1000px 500px at 90% 0%, rgba(147, 197, 253, 0.12), transparent 55%),
+		var(--bg);
+}
+
+.hero{
+	padding:18px;
+	margin:16px 0;
+	border:1px solid var(--line);
+	border-radius:18px;
+	background:linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+}
+
+.heroTop{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+
+.btnRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+.btn{
+	display:inline-flex;
+	align-items:center;
+	gap:8px;
+	padding:9px 12px;
+	border-radius:12px;
+	border:1px solid var(--line);
+	background:rgba(255,255,255,0.03);
+	color:var(--text);
+	font-weight:600;
+	font-size:14px;
+	text-decoration:none;
+}
+
+.btnPrimary{border-color:rgba(167,139,250,0.55);background:rgba(167,139,250,0.16)}
+.btn:hover{text-decoration:none;filter:brightness(1.05)}
+
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:12px}
+@media(max-width:900px){.kpis{grid-template-columns:1fr}}
+.kpi{border:1px solid var(--line);border-radius:14px;padding:12px;background:rgba(255,255,255,0.02)}
+.kpiTitle{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:0.12em}
+.kpiValue{font-size:16px;font-weight:700;margin-top:6px}
+
+.callout{
+	border-left:4px solid rgba(147,197,253,0.8);
+	background:rgba(147,197,253,0.08);
+	padding:10px 12px;
+	border-radius:10px;
+	margin-top:10px;
+}
+.calloutGood{border-left-color:rgba(110,231,183,0.85);background:rgba(110,231,183,0.08)}
+.calloutWarn{border-left-color:rgba(252,211,77,0.9);background:rgba(252,211,77,0.08)}
+
+.footer{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+
+.mermaid{background:rgba(255,255,255,0.02);border:1px solid rgba(51,65,85,0.8);border-radius:12px;padding:10px;overflow-x:auto}

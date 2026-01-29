@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AXLUSD — Team Brief</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./mermaid-init.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="badge" href="./index.html">Overview</a>
+      <a class="badge" href="./team.html"><strong>Team Brief</strong></a>
+      <a class="badge" href="./process.html">Full Process</a>
+      <a class="badge" href="./get-paid.html">How We Get Paid</a>
+      <a class="badge" href="./diagrams.html">Diagrams</a>
+      <a class="badge" href="https://github.com/Y3KDigital/axlusd" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+
+    <div class="hero">
+      <div class="heroTop">
+        <div>
+          <div class="h1">Team Brief (Demo)</div>
+          <div class="small">Updated: Jan 28, 2026 • This page is for internal alignment and a clean meeting walkthrough.</div>
+        </div>
+        <div class="small">Primary rail: <span class="mono">XRPL</span> • Mirror rail: <span class="mono">Stellar</span></div>
+      </div>
+      <div class="btnRow">
+        <a class="btn btnPrimary" href="https://github.com/Y3KDigital/axlusd/blob/main/00-EXECUTIVE-PORTAL.md" target="_blank" rel="noreferrer">Open Executive Portal</a>
+        <a class="btn" href="https://github.com/Y3KDigital/axlusd/blob/main/xrpl/07-Attestation-Transaction-Template.md" target="_blank" rel="noreferrer">Open Attestation Ceremony</a>
+        <a class="btn" href="./get-paid.html">Payment/Disbursement</a>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="h2">What’s done</div>
+        <ul class="ul">
+          <li>Institutional repo/data room built and published.</li>
+          <li>Evidence locked: SHA-256 recorded; appraisal PDF pinned to IPFS; CID recorded.</li>
+          <li>XRPL attestation ceremony template is operator-proof and ready.</li>
+          <li>Diagrams + flow trees included for fast IC / lender review.</li>
+        </ul>
+        <div class="callout calloutGood"><b>Net:</b> we have a complete diligence + execution system; remaining step is the XRPL attestation transaction execution and recording its tx hash.</div>
+      </div>
+
+      <div class="panel">
+        <div class="h2">What’s pending (execution gates)</div>
+        <ul class="ul">
+          <li>Finalize XRPL addresses (Attestor / Issuer / Treasury) and signing method (Xaman vs script).</li>
+          <li>Submit XRPL attestation transaction (memo anchor payload).</li>
+          <li>Record XRPL tx hash + ledger index into Master Asset Record and portal.</li>
+          <li>Custody/insurance gate: vault receipt + binder/endorsements (if facility requires loss payee).</li>
+        </ul>
+        <div class="callout calloutWarn"><b>Team decision:</b> pick the exact operational key custody model for signing and recovery.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Meeting walkthrough (15 minutes)</div>
+      <ul class="ul">
+        <li>2 min: show the end-to-end flow diagram</li>
+        <li>5 min: show the evidence chain (hash + IPFS CID) and why XRPL is canonical</li>
+        <li>5 min: walk through the attestation ceremony checklist</li>
+        <li>3 min: walk through “How we get paid” waterfall + controls</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="h2">One-slide diagram (demo)</div>
+      <div class="mermaid">
+flowchart TD
+  A[Evidence Locked\nSHA-256 + IPFS CID] --> B[XRPL Attestation\nCanonical memo anchor]
+  B --> C[Custody Control + Insurance]\n
+  C --> D[Credit Facility Close/Draw]
+  D --> E[Disbursement / Waterfall]\n(per agreements)
+
+  subgraph Rails
+    X[XRPL = Canonical Source of Truth]
+    S[Stellar = Mirror Only]
+  end
+      </div>
+      <div class="small">Canonical diagrams live here: <a href="https://github.com/Y3KDigital/axlusd/blob/main/diagrams/00-Color-Coded-Overview.md" target="_blank" rel="noreferrer">diagrams/00-Color-Coded-Overview.md</a></div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Open questions (fill in for the real team)</div>
+      <ul class="ul">
+        <li>Who is the SPV director/officer signer set (names/roles)?</li>
+        <li>Who controls the XRPL attestor key (and what is the recovery plan)?</li>
+        <li>Where do facility proceeds land (bank account details / signers / approvals)?</li>
+        <li>What is the agreed waterfall order + percentages for distributions?</li>
+      </ul>
+    </div>
+
+    <div class="footer">Internal demo page. Replace placeholders with executed agreements and named roles before external sharing.</div>
+  </div>
+</body>
+</html>

@@ -10,14 +10,45 @@
   <div class="container">
     <div class="nav">
       <a class="badge" href="./index.html">Overview</a>
+      <a class="badge" href="./team.html"><strong>Team Brief</strong></a>
       <a class="badge" href="./process.html">Full Process</a>
       <a class="badge" href="./get-paid.html">How We Get Paid</a>
       <a class="badge" href="./diagrams.html">Diagrams</a>
       <a class="badge" href="https://github.com/Y3KDigital/axlusd" target="_blank" rel="noreferrer">GitHub Repo</a>
     </div>
 
-    <div class="h1">AXLUSD / Alexandrite RWA — Institutional Overview</div>
-    <div class="small">Purpose: one link to explain what we are doing, how it works end-to-end, and how settlement/payment happens.</div>
+    <div class="hero">
+      <div class="heroTop">
+        <div>
+          <div class="h1">AXLUSD / Alexandrite RWA — Team Demo Site</div>
+          <div class="small">Updated: Jan 28, 2026 • One link to align the team on scope, sequence, and how payment/disbursement works.</div>
+        </div>
+        <div class="small">Canonical rail: <span class="mono">XRPL</span> • Mirror rail: <span class="mono">Stellar</span></div>
+      </div>
+      <div class="btnRow">
+        <a class="btn btnPrimary" href="./team.html">Open Team Brief</a>
+        <a class="btn" href="./process.html">Full Process</a>
+        <a class="btn" href="./get-paid.html">How We Get Paid</a>
+        <a class="btn" href="./diagrams.html">Diagrams</a>
+      </div>
+      <div class="kpis">
+        <div class="kpi">
+          <div class="kpiTitle">Evidence Lock</div>
+          <div class="kpiValue">SHA-256 + IPFS CID recorded</div>
+          <div class="small">Immutable references already documented</div>
+        </div>
+        <div class="kpi">
+          <div class="kpiTitle">On-ledger Anchor</div>
+          <div class="kpiValue">XRPL attestation pending</div>
+          <div class="small">Requires addresses + signing method</div>
+        </div>
+        <div class="kpi">
+          <div class="kpiTitle">Funding Path</div>
+          <div class="kpiValue">Facility → SPV → waterfall</div>
+          <div class="small">Terms governed by executed agreements</div>
+        </div>
+      </div>
+    </div>
 
     <div class="panel">
       <div class="h2">Color-Coded Domains (Legend)</div>
@@ -64,15 +95,14 @@
     <div class="panel">
       <div class="h2">Repository spine (for reviewers)</div>
       <ul class="ul">
-        <li>Executive portal: <a href="../00-EXECUTIVE-PORTAL.md">00-EXECUTIVE-PORTAL.md</a></li>
-        <li>Diagram pack: <a href="../diagrams/00-Color-Coded-Overview.md">diagrams/00-Color-Coded-Overview.md</a></li>
-        <li>Attestation ceremony page: <a href="../xrpl/07-Attestation-Transaction-Template.md">xrpl/07-Attestation-Transaction-Template.md</a></li>
+        <li>Executive portal: <a href="https://github.com/Y3KDigital/axlusd/blob/main/00-EXECUTIVE-PORTAL.md" target="_blank" rel="noreferrer">00-EXECUTIVE-PORTAL.md</a></li>
+        <li>Diagram pack: <a href="https://github.com/Y3KDigital/axlusd/blob/main/diagrams/00-Color-Coded-Overview.md" target="_blank" rel="noreferrer">diagrams/00-Color-Coded-Overview.md</a></li>
+        <li>Attestation ceremony page: <a href="https://github.com/Y3KDigital/axlusd/blob/main/xrpl/07-Attestation-Transaction-Template.md" target="_blank" rel="noreferrer">xrpl/07-Attestation-Transaction-Template.md</a></li>
       </ul>
       <div class="small">Note: the XRPL attestation transaction is the remaining execution ceremony; everything else is structured and ready.</div>
     </div>
 
-    <hr />
-    <div class="small">Disclaimer: This site is operational documentation only; not legal, tax, or investment advice.</div>
+    <div class="footer">Disclaimer: operational documentation only; not legal, tax, or investment advice.</div>
   </div>
 </body>
 </html>
