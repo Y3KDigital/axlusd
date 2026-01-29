@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AXLUSD — Full Process</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./mermaid-init.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="badge" href="./index.html">Overview</a>
+      <a class="badge" href="./process.html">Full Process</a>
+      <a class="badge" href="./get-paid.html">How We Get Paid</a>
+      <a class="badge" href="./diagrams.html">Diagrams</a>
+      <a class="badge" href="https://github.com/Y3KDigital/axlusd" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+
+    <div class="h1">Full Process (End-to-End)</div>
+    <div class="small">This page mirrors the locked build order: SPV → Custody → Digital Twin → Credit Facility → Token/Distribution.</div>
+
+    <div class="panel">
+      <div class="h2">1) SPV / Legal Structure</div>
+      <ul class="ul">
+        <li>Form SPV (issuer/borrower vehicle) with defined governance and signing authorities.</li>
+        <li>Draft asset contribution / bill of sale into SPV; align chain-of-title evidence set.</li>
+        <li>Prepare security agreement and lender enforcement rights against custody position.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="h2">2) Vault Custody / Insurance</div>
+      <ul class="ul">
+        <li>Execute custody agreement: who can instruct movements, what constitutes breach, what logs are produced.</li>
+        <li>Insurance coverage aligned with lender requirements; named insured / loss payee where required.</li>
+        <li>Operational controls: dual-control, audit logs, periodic re-verification.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="h2">3) Digital Twin / Evidence Anchoring (XRPL Canonical)</div>
+      <ul class="ul">
+        <li>Compute SHA-256 of appraisal PDF; record in repo.</li>
+        <li>Upload appraisal PDF to IPFS; record CID in repo.</li>
+        <li>Anchor CID + SHA-256 + master record hash via XRPL memo in an attestation transaction.</li>
+      </ul>
+      <div class="callout">
+        <b>Rule:</b> XRPL is the source of truth for evidence anchoring; Stellar is mirror-only.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">4) Credit Facility ($10–15M)</div>
+      <ul class="ul">
+        <li>Underwriting: value basis, LTV, advance rate, covenants, reporting.</li>
+        <li>Collateral enforcement: perfected security interest + custody control agreement.</li>
+        <li>Draw mechanics: lender disburses to SPV; proceeds used per permitted use-of-funds.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="h2">5) Token / Offering Architecture</div>
+      <ul class="ul">
+        <li>Decide instrument (e.g., IOU units, revenue share, debt participation) consistent with counsel guidance.</li>
+        <li>XRPL issuance controls (issuer, operational keys, freeze/clawback policy) documented and executed.</li>
+        <li>Stellar mirror rail enabled only after XRPL canonical state is finalized.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="h2">System Flow (High-Level)</div>
+      <div class="mermaid">
+flowchart TD
+  A[SPV formed + governance locked] --> B[Custody agreement + insurance bound]
+  B --> C[Evidence locked: SHA-256 + IPFS CID]
+  C --> D[XRPL attestation tx (memo anchoring)]
+  D --> E[Credit facility closes + draw]
+  E --> F[Token/rail distribution (XRPL canonical, Stellar mirror)]
+      </div>
+      <div class="small">If you want the ceremony steps for the attestation tx, see the repo page <a href="../xrpl/07-Attestation-Transaction-Template.md">xrpl/07-Attestation-Transaction-Template.md</a>.</div>
+    </div>
+
+    <hr />
+    <div class="small">This is a process explanation; binding terms live in the legal/custody docs.</div>
+  </div>
+</body>
+</html>

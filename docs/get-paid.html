@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AXLUSD — How We Get Paid</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./mermaid-init.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="badge" href="./index.html">Overview</a>
+      <a class="badge" href="./process.html">Full Process</a>
+      <a class="badge" href="./get-paid.html">How We Get Paid</a>
+      <a class="badge" href="./diagrams.html">Diagrams</a>
+      <a class="badge" href="https://github.com/Y3KDigital/axlusd" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+
+    <div class="h1">How We Get Paid (Settlement & Disbursement)</div>
+    <div class="small">This is the operational cashflow path. The binding version must match executed agreements.</div>
+
+    <div class="panel">
+      <div class="h2">Payment events (typical)</div>
+      <ul class="ul">
+        <li><b>Facility close / initial draw</b>: lender funds the SPV under the credit agreement.</li>
+        <li><b>Ongoing fees</b>: custody/insurance/legal/admin paid per budget.</li>
+        <li><b>Distribution events</b>: revenue proceeds, refinance, or liquidation proceeds distributed per waterfall.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Waterfall (conceptual)</div>
+      <ul class="ul">
+        <li>First: taxes, third-party costs, custody/insurance, required reserves.</li>
+        <li>Then: lender interest and principal per the facility terms.</li>
+        <li>Then: program fees and agreed compensation to operators/sponsors.</li>
+        <li>Then: investor / holder distributions (if applicable).</li>
+      </ul>
+      <div class="small">Exact priority order comes from the executed facility + token/participation documents.</div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Controls (why this is bankable)</div>
+      <ul class="ul">
+        <li>Custody control agreement governs who can move the asset and under what conditions.</li>
+        <li>Evidence is anchored on XRPL (immutable references to the appraisal + master record hashes).</li>
+        <li>Disbursements use documented approvals and accounting logs (ops runbook).</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Mermaid: Funding → Controls → Payment</div>
+      <div class="mermaid">
+flowchart TD
+  L[Lender / Facility] -->|Funds| S[SPV]
+  S -->|Pays| V[Vault Custody + Insurance]
+  S -->|Pays| O[Operations / Legal / Admin]
+  S -->|Distribution| P[Participants (per waterfall)]
+
+  A[Asset in Custody] --> C[Control Agreement]
+  C --> E[Enforcement rights]
+  D[XRPL Evidence Anchor] --> R[Reduced disputes / audit trail]
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Where to verify in the repo</div>
+      <ul class="ul">
+        <li>Evidence + anchors: <a href="../asset/01-Appraisal-Hash.md">asset/01-Appraisal-Hash.md</a>, <a href="../asset/02-IPFS-Upload-Record.md">asset/02-IPFS-Upload-Record.md</a>, <a href="../xrpl/07-Attestation-Transaction-Template.md">xrpl/07-Attestation-Transaction-Template.md</a></li>
+        <li>Diagram pack: <a href="../diagrams/00-Color-Coded-Overview.md">diagrams/00-Color-Coded-Overview.md</a></li>
+        <li>Executive navigation: <a href="../00-EXECUTIVE-PORTAL.md">00-EXECUTIVE-PORTAL.md</a></li>
+      </ul>
+    </div>
+
+    <hr />
+    <div class="small">If you tell me the intended facility structure (who receives funds, who signs, where distributions go), I can tailor this page into a precise, names/roles version.</div>
+  </div>
+</body>
+</html>

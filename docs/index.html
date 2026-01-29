@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AXLUSD — Institutional Overview</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="badge" href="./index.html">Overview</a>
+      <a class="badge" href="./process.html">Full Process</a>
+      <a class="badge" href="./get-paid.html">How We Get Paid</a>
+      <a class="badge" href="./diagrams.html">Diagrams</a>
+      <a class="badge" href="https://github.com/Y3KDigital/axlusd" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+
+    <div class="h1">AXLUSD / Alexandrite RWA — Institutional Overview</div>
+    <div class="small">Purpose: one link to explain what we are doing, how it works end-to-end, and how settlement/payment happens.</div>
+
+    <div class="panel">
+      <div class="h2">Color-Coded Domains (Legend)</div>
+      <div class="small">
+        <span class="swatch" style="background:#4c1d95"></span> LEGAL &nbsp; 
+        <span class="swatch" style="background:#9a3412"></span> CUSTODY/INSURANCE &nbsp;
+        <span class="swatch" style="background:#1d4ed8"></span> VERIFICATION &nbsp;
+        <span class="swatch" style="background:#065f46"></span> XRPL (Canonical) &nbsp;
+        <span class="swatch" style="background:#155e75"></span> STELLAR (Mirror) &nbsp;
+        <span class="swatch" style="background:#92400e"></span> FINANCE &nbsp;
+        <span class="swatch" style="background:#111827"></span> OPS/CONTROLS
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="h2">What this is</div>
+        <ul class="ul">
+          <li>An institutional execution framework for an appraised physical gemstone (2kg rough chrysoberyl/alexandrite).</li>
+          <li>Designed for counsel, custodians, lenders, auditors, and operations.</li>
+          <li>Not marketing: it’s an operable diligence + execution system.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="h2">Locked architecture</div>
+        <ul class="ul">
+          <li>XRPL is the canonical evidence/registry rail (memo anchoring + controls).</li>
+          <li>Stellar is optional and mirror-only (settlement/distribution; parity constrained).</li>
+          <li>EVM is optional adapter only; never canonical.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Fast path</div>
+      <ul class="ul">
+        <li>Full process: <a href="./process.html">process.html</a></li>
+        <li>How the group gets paid (settlement/disbursement path): <a href="./get-paid.html">get-paid.html</a></li>
+        <li>Diagrams: <a href="./diagrams.html">diagrams.html</a></li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Repository spine (for reviewers)</div>
+      <ul class="ul">
+        <li>Executive portal: <a href="../00-EXECUTIVE-PORTAL.md">00-EXECUTIVE-PORTAL.md</a></li>
+        <li>Diagram pack: <a href="../diagrams/00-Color-Coded-Overview.md">diagrams/00-Color-Coded-Overview.md</a></li>
+        <li>Attestation ceremony page: <a href="../xrpl/07-Attestation-Transaction-Template.md">xrpl/07-Attestation-Transaction-Template.md</a></li>
+      </ul>
+      <div class="small">Note: the XRPL attestation transaction is the remaining execution ceremony; everything else is structured and ready.</div>
+    </div>
+
+    <hr />
+    <div class="small">Disclaimer: This site is operational documentation only; not legal, tax, or investment advice.</div>
+  </div>
+</body>
+</html>

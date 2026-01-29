@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AXLUSD — Diagrams</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./mermaid-init.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="badge" href="./index.html">Overview</a>
+      <a class="badge" href="./process.html">Full Process</a>
+      <a class="badge" href="./get-paid.html">How We Get Paid</a>
+      <a class="badge" href="./diagrams.html">Diagrams</a>
+      <a class="badge" href="https://github.com/Y3KDigital/axlusd" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+
+    <div class="h1">Diagrams (SR-level quick scans)</div>
+    <div class="small">These are simplified web versions; the canonical diagram pack lives in the repo.</div>
+
+    <div class="panel">
+      <div class="h2">End-to-End Overview</div>
+      <div class="mermaid">
+flowchart LR
+  A[SPV Legal] --> B[Custody + Insurance]
+  B --> C[Evidence: SHA-256 + IPFS]
+  C --> D[XRPL Canonical Attestation]
+  D --> E[Facility / Draw]
+  E --> F[Distribution / Token / Settlement]
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Canonical vs Mirror Rails</div>
+      <div class="mermaid">
+flowchart TD
+  XR[XRPL: Canonical registry/evidence] --> XRT[XRPL tx memo anchors]
+  ST[Stellar: Mirror rail only] --> STM[Stellar issuance/distribution]
+  XRT -. parity constraints .-> STM
+  EVM[EVM: Optional adapter] -. never canonical .-> XR
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Attestation Ceremony (short)</div>
+      <div class="mermaid">
+flowchart TD
+  P[Pre-flight: hashes/CID verified] --> S[Sign XRPL attestation tx]
+  S --> H[Record tx hash + ledger index]
+  H --> U[Update Master Asset Record + portal]
+      </div>
+      <div class="small">Full ceremony checklist: <a href="../xrpl/07-Attestation-Transaction-Template.md">xrpl/07-Attestation-Transaction-Template.md</a></div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Canonical diagram pack (repo)</div>
+      <ul class="ul">
+        <li><a href="../diagrams/00-Color-Coded-Overview.md">diagrams/00-Color-Coded-Overview.md</a></li>
+        <li><a href="../diagrams/01-System-Architecture.md">diagrams/01-System-Architecture.md</a></li>
+        <li><a href="../diagrams/02-Fund-Flow.md">diagrams/02-Fund-Flow.md</a></li>
+        <li><a href="../diagrams/03-Trust-Boundaries.md">diagrams/03-Trust-Boundaries.md</a></li>
+        <li><a href="../diagrams/04-Flow-Trees.md">diagrams/04-Flow-Trees.md</a></li>
+      </ul>
+    </div>
+
+    <hr />
+    <div class="small">Tip: enable GitHub Pages from the repo’s Settings → Pages, source: main, folder: /docs.</div>
+  </div>
+</body>
+</html>
