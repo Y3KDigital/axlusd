@@ -1,6 +1,10 @@
 # ALEXANDRITE RWA EXECUTION PACKAGE
 
-Start here (institutional navigation + color-coded flowcharts): `00-EXECUTIVE-PORTAL.md`
+Start here (institutional navigation + color-coded flowcharts): [00-EXECUTIVE-PORTAL.md](00-EXECUTIVE-PORTAL.md)
+
+Executive diagrams:
+- [diagrams/00-Color-Coded-Overview.md](diagrams/00-Color-Coded-Overview.md)
+- [diagrams/04-Flow-Trees.md](diagrams/04-Flow-Trees.md)
 
 **Asset:** 2kg Rough Chrysoberyl (Alexandrite) – Bahia, Brazil  
 **Appraised Value:** USD $42,000,000  
