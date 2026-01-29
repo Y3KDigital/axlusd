@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AXLUSD — Simple Execution Flow</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script defer src="./mermaid-init.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a class="badge" href="./index.html">Overview</a>
+      <a class="badge" href="./simple.html"><strong>Simple Flow</strong></a>
+      <a class="badge" href="./team.html">Team Brief</a>
+      <a class="badge" href="./process.html">Full Process</a>
+      <a class="badge" href="./get-paid.html">How We Get Paid</a>
+      <a class="badge" href="./diagrams.html">Diagrams</a>
+      <a class="badge" href="https://github.com/Y3KDigital/axlusd" target="_blank" rel="noreferrer">GitHub Repo</a>
+    </div>
+
+    <div class="hero">
+      <div class="heroTop">
+        <div>
+          <div class="h1">Simple Execution Flow (Everyone Version)</div>
+          <div class="small">If you only read one page, read this one.</div>
+        </div>
+        <div class="small">Rule: XRPL is the canonical evidence rail.</div>
+      </div>
+
+      <div class="btnRow">
+        <a class="btn btnPrimary" href="./get-paid.html">How we get paid</a>
+        <a class="btn" href="./team.html">Team brief</a>
+        <a class="btn" href="./process.html">Full process</a>
+      </div>
+
+      <div class="callout calloutGood">
+        <b>Plain-English summary:</b> We lock the asset in custody, lock the appraisal evidence (hash + IPFS), then write a permanent “receipt reference” to XRPL so lenders/partners can verify the evidence didn’t change.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">Color legend</div>
+      <div class="small">
+        <span class="swatch" style="background:#4c1d95"></span> LEGAL &nbsp;
+        <span class="swatch" style="background:#9a3412"></span> CUSTODY &nbsp;
+        <span class="swatch" style="background:#1d4ed8"></span> VERIFICATION &nbsp;
+        <span class="swatch" style="background:#065f46"></span> XRPL (CANONICAL) &nbsp;
+        <span class="swatch" style="background:#92400e"></span> FINANCE &nbsp;
+        <span class="swatch" style="background:#111827"></span> OPS
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="h2">Step 1 — Legal wrapper (LEGAL)</div>
+        <ul class="ul">
+          <li>Create the SPV (the project company).</li>
+          <li>Document who is allowed to sign and make decisions.</li>
+        </ul>
+        <div class="small">Why: makes the deal enforceable and bankable.</div>
+      </div>
+
+      <div class="panel">
+        <div class="h2">Step 2 — Put the asset in vault (CUSTODY)</div>
+        <ul class="ul">
+          <li>Asset goes into an approved vault.</li>
+          <li>We get a custody receipt and insurance proof.</li>
+        </ul>
+        <div class="small">Why: lender needs control of collateral reality.</div>
+      </div>
+
+      <div class="panel">
+        <div class="h2">Step 3 — Lock the evidence (VERIFICATION)</div>
+        <ul class="ul">
+          <li>We compute a SHA-256 fingerprint of the appraisal PDF.</li>
+          <li>We store the appraisal on IPFS and record the CID.</li>
+        </ul>
+        <div class="small">Why: anyone can confirm the appraisal file did not change.</div>
+      </div>
+
+      <div class="panel">
+        <div class="h2">Step 4 — Write the “receipt reference” to XRPL (XRPL)</div>
+        <ul class="ul">
+          <li>We submit one XRPL transaction with a memo containing the CID + hash.</li>
+          <li>That XRPL tx hash becomes the permanent public reference.</li>
+        </ul>
+        <div class="small">Why: independent time-stamped, tamper-resistant proof.</div>
+      </div>
+
+      <div class="panel">
+        <div class="h2">Step 5 — Financing (FINANCE)</div>
+        <ul class="ul">
+          <li>Lender closes facility and funds the SPV (typically $10–15M target).</li>
+          <li>Funds are used per the agreed budget and covenants.</li>
+        </ul>
+        <div class="small">Why: capital is unlocked against controlled collateral + evidence.</div>
+      </div>
+
+      <div class="panel">
+        <div class="h2">Step 6 — Disbursement (OPS)</div>
+        <ul class="ul">
+          <li>Costs get paid (custody/insurance/legal/admin).</li>
+          <li>Team/investor payouts follow the agreed waterfall.</li>
+        </ul>
+        <div class="small">Why: clear rules prevent disputes and keep the deal financeable.</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">One-picture flow (simple)</div>
+      <div class="mermaid">
+flowchart LR
+  A[LEGAL\nSPV + authority] --> B[CUSTODY\nVault + insurance]
+  B --> C[VERIFICATION\nSHA-256 + IPFS CID]
+  C --> D[XRPL\nAttestation memo tx]
+  D --> E[FINANCE\nFacility funds SPV]
+  E --> F[OPS\nPay costs + distribute]
+      </div>
+      <div class="small">XRPL is the canonical proof layer. Stellar can be used later as a mirror rail, but it never replaces XRPL as the record of truth.</div>
+    </div>
+
+    <div class="panel">
+      <div class="h2">What’s the only “hard” thing left?</div>
+      <div class="callout calloutWarn">
+        <b>Execute the XRPL attestation transaction</b> and record the tx hash into the Master Asset Record.
+      </div>
+      <ul class="ul">
+        <li>Attestation ceremony checklist: <a href="https://github.com/Y3KDigital/axlusd/blob/main/xrpl/07-Attestation-Transaction-Template.md" target="_blank" rel="noreferrer">xrpl/07-Attestation-Transaction-Template.md</a></li>
+        <li>Master Asset Record: <a href="https://github.com/Y3KDigital/axlusd/blob/main/asset/03-Master-Asset-Record.md" target="_blank" rel="noreferrer">asset/03-Master-Asset-Record.md</a></li>
+      </ul>
+    </div>
+
+    <div class="footer">This is the simplified explanation for stakeholders. Legal/finance documents control the real terms.</div>
+  </div>
+</body>
+</html>

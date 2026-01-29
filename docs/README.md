@@ -4,6 +4,7 @@ This folder is intended to be published via GitHub Pages.
 
 ## Pages
 - `index.html` — Overview
+- `simple.html` — Simple color-coded execution flow (non-technical)
 - `team.html` — Team brief (front-facing demo)
 - `process.html` — Full end-to-end process
 - `get-paid.html` — Settlement & disbursement path
